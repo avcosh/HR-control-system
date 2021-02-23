@@ -13,5 +13,6 @@
 <?= $this->renderSection('content') ?>
 <hr>
 <?= $this->renderSection('footer') ?>
+<script src = "<?=base_url('bootstrap/js/bootstrap.js')?>">
 </body>
 </html>
