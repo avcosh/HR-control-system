@@ -25,6 +25,8 @@ class Employee extends Model
 
 	// Validation
 	protected $validationRules      = [
+	    'email'        => 'required|valid_email',
+		'valid_email' => 'Проверьте корректность электронной почты'
 	    
 	];
 	protected $validationMessages   = [

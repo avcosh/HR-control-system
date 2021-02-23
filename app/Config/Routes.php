@@ -33,6 +33,17 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'SiteController::index');
+$routes->get('assignment', 'AssignmentController::index');
+$routes->get('bonus', 'BonusController::index');
+$routes->get('contract', 'ContractController::index');
+$routes->get('dismiss', 'DismissController::index');
+$routes->get('employee', 'EmployeeController::index');
+$routes->get('interview', 'InterviewController::index');
+$routes->get('log', 'LogController::index');
+$routes->get('order', 'OrderController::index');
+$routes->get('position', 'PositionController::index');
+$routes->get('recruit', 'RecruitController::index');
+$routes->get('vacation', 'VacationController::index');
 
 /*
  * --------------------------------------------------------------------
