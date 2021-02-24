@@ -6,6 +6,7 @@ class SiteController extends BaseController
 {
 	public function index()
 	{
-		return view('site/index');
+		$data['meta_title'] = 'Home page';
+		return view('site/index', $data);
 	}
 }

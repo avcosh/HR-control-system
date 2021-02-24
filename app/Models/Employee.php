@@ -14,19 +14,19 @@ class Employee extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['first_name', 'last_name', 'address', 'email', 'status'];
 
 	// Dates
 	protected $useTimestamps        = false;
 	//protected $dateFormat           = 'datetime';
-	//protected $createdField         = 'created_at';
-	//protected $updatedField         = 'updated_at';
+	//protected $createdField         = 'created_at'; здесь название поля куда автоматически ставить дату при создании
+	//protected $updatedField         = 'updated_at';  здесь название поля куда автоматически ставить дату при обновлении
 	//protected $deletedField         = 'deleted_at';
 
 	// Validation
 	protected $validationRules      = [
-	    'email'        => 'required|valid_email',
-		'valid_email' => 'Проверьте корректность электронной почты'
+	    //'email'        => 'required|valid_email',
+		//'valid_email' => 'Проверьте корректность электронной почты'
 	    
 	];
 	protected $validationMessages   = [
@@ -47,4 +47,12 @@ class Employee extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
+
 }
