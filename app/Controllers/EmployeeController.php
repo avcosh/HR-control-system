@@ -23,6 +23,30 @@ class EmployeeController extends BaseController
         ]);	
 	}
 	
+	public function edit($id)
+	{
+	    echo view('employee/edit', [
+            'employee' => $this->findModel($id),
+			'meta_title' => 'Edit employee'
+        ]);;	
+	}
+	
+	public function update()
+	{
+	    $request = \Config\Services::request();
+		$employee = [
+		    'id'         => $request->getPost('id'),
+		    'first_name' => $request->getPost('first_name'),
+            'last_name' => $request->getPost('last_name'),
+			'address' => $request->getPost('address'), 
+			'email' => $request->getPost('email'), 
+			'status' => $request->getPost('status')
+ 		];
+		$std = new Employee();
+		$std->update($employee['id'], $employee);
+		return redirect()->to(site_url('employee'));		
+	}
+	
 	public function create()
 	{
         echo view('employee/create', ['meta_title' => 'Create new employee']);	
@@ -43,6 +67,13 @@ class EmployeeController extends BaseController
 		$result = $std->insert($newEmployee);
 		return redirect()->to(site_url('employee'));
 		
+	}
+	
+	public function delete($id)
+	{
+	    $employee = new Employee();
+		$employee->delete($id);
+		return redirect()->to(site_url('employee'));
 	}
 	
 	private function findModel($id)
