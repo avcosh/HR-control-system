@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'SiteController::index');
 $routes->get('assignment', 'AssignmentController::index');
+$routes->get('assignment/create', 'AssignmentController::create');
+
 $routes->get('bonus', 'BonusController::index');
 $routes->get('contract', 'ContractController::index');
 $routes->get('dismiss', 'DismissController::index');

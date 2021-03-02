@@ -14,7 +14,7 @@ class Assignment extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['order_id', 'employee_id', 'position_id', 'date', 'rate', 'salary', 'active'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -48,4 +48,11 @@ class Assignment extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }
