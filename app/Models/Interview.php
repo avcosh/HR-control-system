@@ -14,7 +14,7 @@ class Interview extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['date', 'first_name', 'last_name', 'email', 'status', 'reject_reason', 'employee_id'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -39,4 +39,11 @@ class Interview extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }

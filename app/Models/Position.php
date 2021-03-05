@@ -14,7 +14,7 @@ class Position extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['name'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -26,7 +26,7 @@ class Position extends Model
 	// Validation
 	protected $validationRules      = [
 	    'name'     => 'required',
-	]
+	];
 	protected $validationMessages   = [
 	    'errors' => [
                 'required' => 'Поле должно быть заполнено'
@@ -45,4 +45,11 @@ class Position extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }

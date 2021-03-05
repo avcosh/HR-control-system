@@ -33,23 +33,39 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'SiteController::index');
+
 $routes->get('assignment', 'AssignmentController::index');
 $routes->get('assignment/create', 'AssignmentController::create');
 
 $routes->get('bonus', 'BonusController::index');
+$routes->get('bonus/create', 'BonusController::create');
+
 $routes->get('contract', 'ContractController::index');
+$routes->get('contract/create', 'ContractController::create');
+
 $routes->get('dismiss', 'DismissController::index');
+$routes->get('dismiss/create', 'DismissController::create');
 
 $routes->get('employee', 'EmployeeController::index');
 $routes->get('employee/create', 'EmployeeController::create');
 
 $routes->get('interview', 'InterviewController::index');
-$routes->get('log', 'LogController::index');
-$routes->get('order', 'OrderController::index');
-$routes->get('position', 'PositionController::index');
-$routes->get('recruit', 'RecruitController::index');
-$routes->get('vacation', 'VacationController::index');
+$routes->get('interview/create', 'InterviewController::create');
 
+$routes->get('order', 'OrderController::index');
+$routes->get('order/create', 'OrderController::create');
+
+$routes->get('position', 'PositionController::index');
+$routes->get('position/create', 'PositionController::create');
+
+$routes->get('recruit', 'RecruitController::index');
+$routes->get('recruit/create', 'RecruitController::create');
+
+$routes->get('log', 'LogController::index');
+$routes->get('log/create', 'LogController::create');
+
+$routes->get('vacation', 'VacationController::index');
+$routes->get('vacation/create', 'VacationController::create');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

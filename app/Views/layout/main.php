@@ -27,6 +27,7 @@
 		<a class="nav-link" href="<?= base_url('order')?>">Orders</a>
         <a class="nav-link" href="<?= base_url('position')?>">Positions</a>
 		<a class="nav-link" href="<?= base_url('recruit')?>">Recruits</a>
+		<a class="nav-link" href="<?= base_url('vacation')?>">Vacantions</a>
         <a class="nav-link" href="<?= base_url('log')?>">logs</a>
       </div>
     </div>

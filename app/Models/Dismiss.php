@@ -14,7 +14,7 @@ class Dismiss extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['employee_id', 'order_id', 'date', 'reason'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -47,4 +47,11 @@ class Dismiss extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }

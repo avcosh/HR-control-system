@@ -14,7 +14,7 @@ class Order extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['date'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -25,7 +25,7 @@ class Order extends Model
 
 	// Validation
 	protected $validationRules      = [
-	    'first_name'     => 'required',
+	    'date'     => 'required',
 	];
 	protected $validationMessages   = [
 	    'errors' => [
@@ -45,4 +45,11 @@ class Order extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }

@@ -14,7 +14,7 @@ class Contract extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['employee_id', 'first_name', 'last_name', 'date_open', 'date_close', 'close_reason'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -27,9 +27,8 @@ class Contract extends Model
 	protected $validationRules      = [
 	    'first_name'     => 'required',
         'last_name'     => 'required',
-		'date_open'     => 'required',
-        
-	];
+		
+    ];
 	protected $validationMessages   = [
 	    'errors' => [
                 'required' => 'Поле должно быть заполнено'
@@ -48,4 +47,11 @@ class Contract extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }

@@ -14,7 +14,7 @@ class Bonus extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['order_id', 'employee_id', 'cost'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -46,4 +46,11 @@ class Bonus extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }

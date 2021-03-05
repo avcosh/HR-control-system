@@ -14,7 +14,7 @@ class Log extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = [];
+	protected $allowedFields        = ['created_at', 'user_id', 'message'];
 
 	// Dates
 	protected $useTimestamps        = false;
@@ -39,4 +39,11 @@ class Log extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
+	
+	public function findOne($id)
+    {
+    
+    return $this->where(['id' => $id])
+                ->first();
+    }
 }
