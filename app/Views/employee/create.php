@@ -1,3 +1,7 @@
+<?php
+use App\Helpers\EmployeeHelper;
+?>
+
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
@@ -29,7 +33,11 @@
 	  <div class="row mb-3">
 		<label for="inputPassword3" class="col-sm-2 col-form-label">Status</label>
 		<div class="col-sm-10">
-		  <input type="text" class="form-control" name = "status" >
+		    <select name = "status">
+		    <?php foreach(EmployeeHelper::getStatusList() as $key => $value):?>
+		      <option value="<?= $key?>"><?= $value?></option>
+		    <?php endforeach ?>
+		    </select>
 		</div>
 	  </div>
       <input type="submit" class="btn btn-primary" name = "create" value = "Create">

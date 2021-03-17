@@ -6,6 +6,10 @@ use CodeIgniter\Model;
 
 class Interview extends Model
 {
+	public const STATUS_NEW = 1;
+    public const STATUS_PASS = 2;
+    public const STATUS_REJECT = 3;
+	
 	protected $DBGroup              = 'default';
 	protected $table                = 'interview';
 	protected $primaryKey           = 'id';
@@ -14,7 +18,7 @@ class Interview extends Model
 	protected $returnType           = 'object';
 	protected $useSoftDelete        = false;
 	//protected $protectFields        = true;
-	protected $allowedFields        = ['date', 'first_name', 'last_name', 'email', 'status', 'reject_reason', 'employee_id'];
+	protected $allowedFields        = ['date', 'first_name', 'last_name', 'email', 'status', 'reject_reason'];
 
 	// Dates
 	protected $useTimestamps        = false;

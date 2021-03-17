@@ -38,12 +38,7 @@
 		  <input type="text" class="form-control" name = "reject_reason" value = "<?= $interview->reject_reason?>" >
 		</div>
 	  </div>
-	  <div class="row mb-3">
-		<label for="inputPassword3" class="col-sm-2 col-form-label">employee_id</label>
-		<div class="col-sm-10">
-		  <input type="text" class="form-control" name = "employee_id" value = "<?= $interview->employee_id?>" >
-		</div>
-	  </div>
+	 
 	  <input type = "hidden" name = "id" value = "<?= $interview->id?>">
       <input type="submit" class="btn btn-primary" name = "edit" value = "Edit">
     </form>

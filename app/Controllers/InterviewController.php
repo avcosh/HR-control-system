@@ -42,7 +42,7 @@ class InterviewController extends BaseController
 			'email'       => $request->getPost('email'),
 			'status'      => $request->getPost('status'),
 			'reject_reason'  => $request->getPost('reject_reason'),
-			'employee_id'    => $request->getPost('employee_id'),
+		
 		];
 		$std = new Interview();
 		$std->update($interview['id'], $interview);
@@ -65,7 +65,7 @@ class InterviewController extends BaseController
 			'email'          => $request->getPost('email'),
 			'status'         => $request->getPost('status'),
 			'reject_reason'  => $request->getPost('reject_reason'),
-			'employee_id'    => $request->getPost('employee_id'), 
+			 
 		];
 		$std = new Interview();
 		if($std->insert($newInterview)){

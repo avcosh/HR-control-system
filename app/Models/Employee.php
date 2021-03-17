@@ -6,6 +6,11 @@ use CodeIgniter\Model;
 
 class Employee extends Model
 {
+	public const STATUS_PROBATION = 1;
+    public const STATUS_WORK = 2;
+    public const STATUS_VACATION = 3;
+    public const STATUS_DISMISS = 4;
+	
 	protected $DBGroup              = 'default';
 	protected $table                = 'employee';
 	protected $primaryKey           = 'id';

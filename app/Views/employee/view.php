@@ -1,3 +1,7 @@
+<?php
+use App\Helpers\EmployeeHelper;
+?>
+
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
@@ -21,7 +25,7 @@
       <td><?= $employee->last_name?></td>
       <td><?= $employee->address?></td>
       <td><?= $employee->email?></td>
-	  <td><?= $employee->status?></td>
+	  <td><?=EmployeeHelper::getStatusName($employee->status)?></td>
     </tr>
    
   </tbody>

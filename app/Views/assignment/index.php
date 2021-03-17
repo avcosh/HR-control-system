@@ -1,3 +1,8 @@
+<?php
+use App\Helpers\EmployeeHelper;
+use App\Helpers\PositionHelper;
+?>
+
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
@@ -7,8 +12,8 @@
   <thead>
     <tr>
       <th scope="col">Order_id</th>
-	  <th scope="col">Employee_id</th>
-	  <th scope="col">Position_id</th>
+	  <th scope="col">Employee</th>
+	  <th scope="col">Position</th>
 	  <th scope="col">Date</th>
 	  <th scope="col">Rate</th>
 	  <th scope="col">Salary</th>
@@ -20,8 +25,8 @@
    <?php foreach($assignments as $assignment):?>
     <tr>
       <td><?=$assignment->order_id ?></td>
-      <td><?=$assignment->employee_id ?></td>
-	  <td><?=$assignment->position_id ?></td>
+      <td><?=EmployeeHelper::getEmployeeName($assignment->employee_id)?></td>
+	  <td><?=PositionHelper::getPositionName($assignment->position_id)?></td>
 	  <td><?=$assignment->date ?></td>
       <td><?=$assignment->rate ?></td>
 	  <td><?=$assignment->salary ?></td>

@@ -12,7 +12,7 @@
 	  <th scope="col">Email</th>
 	  <th scope="col">Status</th>
 	  <th scope="col">Reject reason</th>
-	  <th scope="col">Employee</th>
+	 
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,7 @@
 	  <td><?=$interview->email  ?></td>
       <td><?=$interview->status ?></td>
 	  <td><?=$interview->reject_reason ?></td>
-	  <td><?=$interview->employee_id ?></td>
+	 
 	  <td><a href = "<?= site_url('InterviewController/view/'.$interview->id)?>">View</a></td>
 	  <td><a href = "<?= site_url('InterviewController/edit/'.$interview->id)?>">Edit</a></td>
 	  <td><a href = "<?= site_url('InterviewController/delete/'.$interview->id)?>">Delete</a></td>

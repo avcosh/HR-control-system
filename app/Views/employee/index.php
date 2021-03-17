@@ -1,3 +1,7 @@
+<?php
+use App\Helpers\EmployeeHelper;
+?>
+
 <?= $this->extend('layout/main') ?>
 <?= $this->section('content') ?>
 
@@ -16,7 +20,7 @@
     <tr>
       <td><?=$employee->last_name ?></td>
       <td><?=$employee->first_name ?></td>
-	  <td><?=$employee->status ?></td>
+	  <td><?=EmployeeHelper::getStatusName($employee->status)?></td>
 	  <td><a href = "<?= site_url('EmployeeController/view/'.$employee->id)?>">View</a></td>
 	  <td><a href = "<?= site_url('EmployeeController/edit/'.$employee->id)?>">Edit</a></td>
 	  <td><a href = "<?= site_url('EmployeeController/delete/'.$employee->id)?>">Delete</a></td>
