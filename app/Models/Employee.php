@@ -11,6 +11,10 @@ class Employee extends Model
     public const STATUS_VACATION = 3;
     public const STATUS_DISMISS = 4;
 	
+	public $order_date;
+    public $contract_date;
+    public $recruit_date;
+	
 	protected $DBGroup              = 'default';
 	protected $table                = 'employee';
 	protected $primaryKey           = 'id';
@@ -55,9 +59,8 @@ class Employee extends Model
 	
 	public function findOne($id)
     {
-    
-    return $this->where(['id' => $id])
+        return $this->where(['id' => $id])
                 ->first();
-    }
+	}
 
 }

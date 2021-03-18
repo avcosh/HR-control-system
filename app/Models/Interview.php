@@ -50,4 +50,15 @@ class Interview extends Model
     return $this->where(['id' => $id])
                 ->first();
     }
+	
+	public static function join($lastName, $firstName, $email, $date)
+    {
+        $interview = new self();
+        $interview->date = $date;
+        $interview->last_name = $lastName;
+        $interview->first_name = $firstName;
+        $interview->email = $email;
+        $interview->status = self::STATUS_NEW;
+        return $interview;
+    }
 }

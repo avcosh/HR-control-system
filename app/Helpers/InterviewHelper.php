@@ -15,6 +15,6 @@ class InterviewHelper
 
     public static function getStatusName($status)
     {
-        return ArrayHelper::getValue(self::getStatusList(), $status);
+        return self::getStatusList()[$status];
     }
 } 
